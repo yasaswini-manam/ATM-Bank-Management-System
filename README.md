@@ -1,54 +1,96 @@
-**Lung Cancer Prediction using Machine Learning**
+**ATM Bank Management System**
 
-**Overview**
+A Java Swing-based ATM Bank Management System with MySQL integration that simulates basic banking operations. This project is designed for learning and demonstration purposes and mimics the functionality of a real ATM.
 
-This project implements a Lung Cancer Prediction system using various machine learning algorithms with a hybrid feature selection technique. The goal is to assist early detection of lung cancer based on patient data, improving diagnosis accuracy and aiding medical professionals in decision-making.
+🖥️ Features
+*User Authentication*
 
-The hybrid feature selection combines multiple methods to select the most relevant features, improving the predictive performance of the models.
+Signup: Create a new bank account.
 
-This project was presented at the International Conference on Artificial Intelligence and Quantum Computing (ICAIQC) and will be published in IEEE.
+Login: Secure user authentication with account credentials.
 
-**Features**
+*Banking Operations*
 
-Data preprocessing and cleaning
+Balance Enquiry: Check the current account balance.
 
-Hybrid feature selection for dimensionality reduction
+Deposit & Withdraw: Manage account funds.
 
-Implementation of multiple machine learning algorithms (e.g., Random Forest, SVM, KNN)
+Fast Cash: Quick withdrawals of preset amounts.
 
-Model evaluation with metrics like Accuracy, Precision, Recall, F1-score
+Mini Statement: View recent transactions.
 
-Visualization of results
+PIN Change: Update account PIN securely.
 
-**Dataset**
+*Database Integration*
 
-The dataset used contains patient information with features relevant to lung cancer diagnosis.
+Fully integrated with MySQL to store user accounts, transactions, and authentication details.
 
-**Usage**
+*User Interface*
 
-*Load and preprocess the dataset:*
+Built using Java Swing for a graphical, interactive experience.
 
-from preprocessing import preprocess_data
-data = preprocess_data('dataset.csv')
+💻 Technologies Used
 
-*Apply feature selection and train models:*
+Programming Language: Java
 
-from model import train_models
-models = train_models(data)
+GUI Framework: Java Swing
 
-*Evaluate models and visualize results:*
+Database: MySQL
 
-from evaluation import evaluate_models
-evaluate_models(models, data)
+IDE: Eclipse / IntelliJ IDEA / NetBeans (any Java IDE)
 
-**Results**
+Build Tool: Java SDK 1.8+
 
-Model accuracy and performance metrics can be displayed in tables or charts.
+📂 Project Structure
+ATM-Bank-Management-System/
+│
+├─ src/
+│   ├─ Login.java
+│   ├─ Signup.java
+│   ├─ BalanceEnquiry.java
+│   ├─ MiniStatement.java
+│   ├─ FastCash.java
+│   └─ PinChange.java
+│
+├─ database/
+│   └─ atm.sql           # SQL file for database setup
+│
+├─ README.md
+└─ .gitignore
 
-The hybrid feature selection improves accuracy by removing irrelevant or redundant features.
+**⚙️ Setup Instructions**
+Clone the Repository
+git clone <repository-url>
+cd ATM-Bank-Management-System
 
-Example metrics:
+Set Up the MySQL Database
 
-Random Forest: 95% Accuracy
+Create a database named atmdb.
 
-SVM: 92% Accuracy
+Import atm.sql to set up the necessary tables.
+
+mysql -u root -p atmdb < database/atm.sql
+
+Configure Database Connection
+
+Update database credentials in DBConnection.java:
+
+String url = "jdbc:mysql://localhost:3306/atmdb";
+String user = "root";
+String password = "your_password";
+
+Run the Project
+
+Open the project in your Java IDE.
+
+Run Login.java to start the ATM interface.
+
+**🚀 Future Enhancements**
+
+Support for multiple account types (Savings, Current).
+
+Add transaction history export as PDF or CSV.
+
+Implement encryption for sensitive user data.
+
+Integration with real banking APIs for simulation.
